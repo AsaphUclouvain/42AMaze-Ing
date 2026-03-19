@@ -19,6 +19,10 @@ authors = [
 license = "MIT"
 license-files = ["LICEN[CS]E*"]
 
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["mazegen"]
+
 [project.urls]
 Homepage = "https://github.com/HajjDev/42-A-Maze-ing/"
 Issues = "https://github.com/HajjDev/42-A-Maze-ing/issues"

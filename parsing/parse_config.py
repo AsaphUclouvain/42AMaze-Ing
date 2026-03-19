@@ -6,7 +6,7 @@
 #  By: cel-hajj <cel-hajj@student.s19.be>        +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 2026/03/02 07:38:49 by cel-hajj        #+#    #+#               #
-#  Updated: 2026/03/10 23:55:51 by cel-hajj        ###   ########.fr        #
+#  Updated: 2026/03/14 13:46:18 by cel-hajj        ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 
@@ -38,12 +38,12 @@ def validate_concurrency(extracted_data: Dict[str, Any],
     """
     # Checks whether all of the mandatory key have a value and if
     # the coordinates at ENTRY are different from the coordinates at EXIT.
-    if (not all(key in extracted_data for key in mandatory_keys) or
-            extracted_data["ENTRY"] == extracted_data["EXIT"]):
-        return (False, "Not all mandatory keys are present in the input data, \
-or the ENTRY coordinates are identical to the EXIT coordinates. ENTRY and \
-EXIT must be distinct.")
-
+    if (not all(key in extracted_data for key in mandatory_keys)):
+        return (False, "Not all mandatory keys are present in the input data")
+    # Checks whether the ENTRY and EXIT coordinates are differents
+    elif extracted_data["ENTRY"] == extracted_data["EXIT"]:
+        return (False, "The ENTRY coordinates are identical to the \
+EXIT coordinates. ENTRY and EXIT must be distinct.")
     # Checks whether ENTRY and EXIT are in the bounds of WIDTH and HEIGHT.
     elif (extracted_data["ENTRY"][0] >= extracted_data["WIDTH"] or
           extracted_data["ENTRY"][1] >= extracted_data["HEIGHT"]):
