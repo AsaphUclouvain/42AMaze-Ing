@@ -1,7 +1,10 @@
 *This project has been created as part of the 42 curriculum by cel-hajj, anzongan.*
 
-
 # A-Maze-ing 🧭
+
+<div style="text-align: center">
+   <img src=".github\images\sample_output.png" width="400" alt="Sample output"/>
+</div>
 
 ## 📖 Description
 **A-Maze-ing** is a Python-based procedural maze generator, solver, and visualizer. The goal of this project is to explore graph theory, algorithm design, and UI rendering by generating dynamic mazes from a configuration file. It features a standalone, highly reusable maze generation engine and a graphical interface built with the MiniLibX (MLX) that provides dynamic window resizing, modern IDE-inspired themes, and robust real-time rendering.
